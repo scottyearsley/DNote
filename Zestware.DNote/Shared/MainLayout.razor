@@ -1,0 +1,41 @@
+﻿@using MudBlazor.Utilities
+
+@inherits LayoutComponentBase
+
+<MudThemeProvider Theme="_myCustomTheme"/>
+<MudDialogProvider/>
+<MudSnackbarProvider/>
+
+<MudLayout>
+    <MudAppBar>
+        <!--<MudImage Src="/images/tgg.png" Height="64"></MudImage>-->
+    </MudAppBar>
+    
+    <MudMainContent>
+        
+    </MudMainContent>
+</MudLayout>
+
+
+@code {
+    
+    readonly MudTheme _myCustomTheme = new()
+    {
+        Palette = new Palette()
+        {
+            Primary = new MudColor("#0E0066"), // Dark blue
+            Secondary = new MudColor("#B2FF02"), // Light green
+            AppbarBackground = new MudColor("#2D94FF") // Light blue
+        },
+        // PaletteDark = new PaletteDark()
+        // {
+        //     Primary = Colors.Blue.Lighten1
+        // },
+        //
+        // LayoutProperties = new LayoutProperties()
+        // {
+        //     DrawerWidthLeft = "260px",
+        //     DrawerWidthRight = "300px"
+        // }
+    };
+}

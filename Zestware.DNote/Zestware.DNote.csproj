@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net7.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.1.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="6.0.550" />
+        <PackageReference Include="MudBlazor" Version="6.1.7" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <Folder Include="Icons" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <None Remove="Icons\note.ico" />
+      <Resource Include="Icons\note.ico" />
+    </ItemGroup>
+
+</Project>
