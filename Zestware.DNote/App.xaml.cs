@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using Hardcodet.Wpf.TaskbarNotification;
 
 namespace Zestware.DNote
@@ -7,13 +6,35 @@ namespace Zestware.DNote
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
-    public partial class App : Application
+    public partial class App
     {
-        private TaskbarIcon? _tb;
-        
-        protected override void OnActivated(EventArgs e)
+        private readonly HotKey _hotKey = new();
+
+        protected override void OnStartup(StartupEventArgs e)
         {
-            _tb = (TaskbarIcon) FindResource("MyNotifyIcon");
+            _ = (TaskbarIcon) FindResource("MyNotifyIcon");
+            
+            Current.MainWindow = new MainWindow();
+            Current.MainWindow.Top = -1000;
+            Current.MainWindow.Show();
+            Current.MainWindow.Visibility = Visibility.Collapsed;
+            
+            _hotKey.Register(Current.MainWindow, ShowWindowOnTop);
+            
+            base.OnStartup(e);
+        }
+
+        private void ShowWindowOnTop()
+        {
+            Current.MainWindow.Top = 100;
+            Current.MainWindow.Show();
+            Current.MainWindow.Activate();
+        }
+
+        protected override void OnExit(ExitEventArgs e)
+        {
+            _hotKey.Unregister();
+            base.OnExit(e);
         }
     }
 }

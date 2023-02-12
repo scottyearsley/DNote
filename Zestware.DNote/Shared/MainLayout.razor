@@ -1,32 +1,33 @@
 ﻿@using MudBlazor.Utilities
+@using Zestware.DNote.Pages
 
 @inherits LayoutComponentBase
 
-<MudThemeProvider Theme="_myCustomTheme"/>
+<MudThemeProvider Theme="_myCustomTheme" IsDarkMode="true"/>
 <MudDialogProvider/>
 <MudSnackbarProvider/>
 
-<MudLayout>
-    <MudAppBar>
-        <!--<MudImage Src="/images/tgg.png" Height="64"></MudImage>-->
-    </MudAppBar>
-    
-    <MudMainContent>
-        
-    </MudMainContent>
-</MudLayout>
-
+@* <MudLayout> *@
+@*     $1$ <MudAppBar> #1# *@
+@*     $1$     <!--<MudImage Src="/images/tgg.png" Height="64"></MudImage>--> #1# *@
+@*     $1$ </MudAppBar> #1# *@
+@*      *@
+@*     <MudMainContent> *@
+@*          *@
+@*     </MudMainContent> *@
+@* </MudLayout> *@
+<EditorView></EditorView>
 
 @code {
     
     readonly MudTheme _myCustomTheme = new()
     {
-        Palette = new Palette()
-        {
-            Primary = new MudColor("#0E0066"), // Dark blue
-            Secondary = new MudColor("#B2FF02"), // Light green
-            AppbarBackground = new MudColor("#2D94FF") // Light blue
-        },
+        // Palette = new Palette()
+        // {
+        //     Primary = new MudColor("#0E0066"), // Dark blue
+        //     Secondary = new MudColor("#B2FF02"), // Light green
+        //     AppbarBackground = new MudColor("#2D94FF") // Light blue
+        // },
         // PaletteDark = new PaletteDark()
         // {
         //     Primary = Colors.Blue.Lighten1

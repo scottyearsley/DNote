@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.ComponentModel;
 using Microsoft.AspNetCore.Components.WebView;
 
 namespace Zestware.DNote
@@ -6,7 +7,7 @@ namespace Zestware.DNote
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         public MainWindow()
         {
@@ -20,6 +21,12 @@ namespace Zestware.DNote
             {
                 urlLoadingEventArgs.UrlLoadingStrategy = UrlLoadingStrategy.OpenInWebView;
             }
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            Hide();
+            e.Cancel = true;
         }
     }
 }
