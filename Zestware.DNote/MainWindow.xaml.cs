@@ -1,5 +1,5 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
+using System.Windows.Input;
 using Microsoft.AspNetCore.Components.WebView;
 
 namespace Zestware.DNote
@@ -12,9 +12,19 @@ namespace Zestware.DNote
         public MainWindow()
         {
             InitializeComponent();
+            KeyDown += OnButtonKeyUp;
+            
             Startup.Configure(Resources);
         }
-        
+
+        private void OnButtonKeyUp(object? sender, KeyEventArgs e)
+        {
+            if (IsActive && e.Key == Key.Escape)
+            {
+                Hide();
+            }
+        }
+
         private void Handle_UrlLoading(object sender, UrlLoadingEventArgs urlLoadingEventArgs)
         {
             if (urlLoadingEventArgs.Url.Host != "0.0.0.0")

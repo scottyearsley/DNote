@@ -1,21 +1,16 @@
-﻿@page "/EditorView"
-<div>
-    <MarkdownEditor @bind-Value="@markdownValue" 
-                    ValueHTMLChanged="@OnMarkdownValueHTMLChanged" LineNumbers="true" />
+﻿using System.Threading.Tasks;
 
-    @* <hr /> *@
-    @* *@
-    @* <h3>Result</h3> *@
-    @* @((MarkupString)markdownHtml) *@
-</div>
+namespace Zestware.DNote.Components;
 
-@code {
+public partial class MarkdownEditorComponent
+{
     string markdownValue = "# Markdown Editor\nThis is a test";
     string markdownHtml;
 
     protected override void OnInitialized()
     {
         markdownHtml = Markdig.Markdown.ToHtml(markdownValue ?? string.Empty);
+        
         base.OnInitialized();
     }
 

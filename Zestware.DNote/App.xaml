@@ -6,6 +6,6 @@
         <tb:TaskbarIcon
             x:Key="MyNotifyIcon"
             IconSource="/Icons/note.ico"
-            ToolTipText="hello world" />
+            ToolTipText="Zestware DNote" />
     </Application.Resources>
 </Application>
