@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Windows.Input;
 using Microsoft.AspNetCore.Components.WebView;
 
@@ -31,6 +32,11 @@ namespace Zestware.DNote
             {
                 urlLoadingEventArgs.UrlLoadingStrategy = UrlLoadingStrategy.OpenInWebView;
             }
+        }
+
+        protected override void OnActivated(EventArgs e)
+        {
+            base.OnActivated(e);
         }
 
         protected override void OnClosing(CancelEventArgs e)

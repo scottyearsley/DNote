@@ -4,24 +4,31 @@ namespace Zestware.DNote.Components;
 
 public partial class MarkdownEditorComponent
 {
-    string markdownValue = "# Markdown Editor\nThis is a test";
-    string markdownHtml;
+    private string? _markdownValue = "# Markdown Editor\nThis is a test";
+    private string? _markdownHtml;
+
+    private bool IsEditing { get; set; }
 
     protected override void OnInitialized()
     {
-        markdownHtml = Markdig.Markdown.ToHtml(markdownValue ?? string.Empty);
+        _markdownHtml = Markdig.Markdown.ToHtml(_markdownValue ?? string.Empty);
         
         base.OnInitialized();
     }
 
-    Task OnMarkdownValueChanged(string value)
+    void OnPreviewClick()
+    {
+        IsEditing = true;
+    }
+    
+    private Task OnMarkdownValueChanged(string value)
     {
         return Task.CompletedTask;
     }
 
-    Task OnMarkdownValueHTMLChanged(string value)
+    private Task OnMarkdownValueHTMLChanged(string value)
     {
-        markdownHtml = value;
+        _markdownHtml = value;
         return Task.CompletedTask;
     }
 }

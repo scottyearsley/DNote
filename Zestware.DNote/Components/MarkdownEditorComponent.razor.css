@@ -1,4 +1,9 @@
 .editor-container {
-    background-color: green;
     height: 100vh;
+}
+
+.editor-preview {
+    height: 100vh;
+    width: 100%;
+    background-color: #333333;
 }
