@@ -20,3 +20,7 @@
 * Azure Functions for CRUD API
 * Azure CosmosDB for note/list storage
 * Auth0 authentication
+
+## Shortcut
+
+To activate the editor and bring it into view press `ALT + N`

@@ -5,7 +5,7 @@ public partial class MarkdownEditorComponent
     private string? _markdownValue = "# Markdown Editor\nThis is a test";
     private string? _markdownHtml;
 
-    private bool IsEditing { get; set; }
+    private bool IsEditing { get; set; } = true;
 
     protected override void OnInitialized()
     {
