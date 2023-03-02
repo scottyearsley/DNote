@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Windows.Input;
 using Microsoft.AspNetCore.Components.WebView;
 
-namespace Zestware.DNote
+namespace Zestware.DNote.WinHost
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

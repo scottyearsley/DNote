@@ -4,7 +4,7 @@ using System.Windows;
 using System.Windows.Interop;
 // ReSharper disable InconsistentNaming
 
-namespace Zestware.DNote;
+namespace Zestware.DNote.WinHost;
 
 public class HotKey
 {

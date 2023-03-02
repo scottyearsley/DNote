@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace Zestware.DNote.Components;
+﻿namespace Zestware.DNote.Components;
 
 public partial class MarkdownEditorComponent
 {

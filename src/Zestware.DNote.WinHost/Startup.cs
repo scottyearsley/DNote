@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using MudBlazor.Services;
 
-namespace Zestware.DNote;
+namespace Zestware.DNote.WinHost;
 
 public static class Startup
 {

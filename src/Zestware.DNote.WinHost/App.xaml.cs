@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using Hardcodet.Wpf.TaskbarNotification;
 
-namespace Zestware.DNote
+namespace Zestware.DNote.WinHost
 {
     /// <summary>
     /// Interaction logic for App.xaml
