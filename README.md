@@ -10,7 +10,6 @@
   * UUID generator
   * Formatted Datetime generator
   * JSON Formatter
-  * JSON Compare
 * Cross-platform - Windows, Web
 * Offline access
 
